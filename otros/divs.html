@@ -1,0 +1,27 @@
+<html>
+<head>
+ <title>Website</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+</script>
+<script>
+$('input').click(function() {
+  $('.tags').hide();
+  var marcados = $('input:checked').map(function() { 
+     return $( this ).val();
+  }).get();
+  $('div.' + marcados.join('.')).show();
+});
+</script>
+<div class="inputs">
+  <input class="filterbox" type="checkbox" value="azul" />Azul
+  <input class="filterbox" type="checkbox" value="verde" />Verde
+  <input class="filterbox" type="checkbox" value="rojo" />Rojo
+</div>
+<br>
+<div class="tags azul">Azul</div>
+<div class="tags verde azul">Verde y Azul</div>
+<div class="tags verde rojo">Verde y Rojo</div>
+<body>
+</html>

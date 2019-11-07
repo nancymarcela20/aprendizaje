@@ -1,0 +1,101 @@
+<html>
+<head>
+<script>
+function setContenido(n) {
+   //var menus = document.getElementById('menu').getElementsByTagName('a');
+   //var contents = document.getElementById('contenidos').getElementsByTagName('div');   
+
+   /*for (var i = 0; i < 3; i ++) {
+       menus[i].className = '';
+       contents[i].style.display = 'none';
+	   alert( contents.item);
+   }
+
+   menus[n].className = 'actual';
+   contents[n].style.display = 'block';*/
+   
+   for (var i = 0; i < 3; i ++) {   
+       var div = document.getElementById(i);
+	   //alert(document.getElementById(i));
+       div.style.display = 'none';
+   }
+   document.getElementById(n).style.display = 'block';
+}
+  //Hacemos una función para hacer las operaciones
+  function textoFecha(fecha){
+    var numDiaSem = fecha.getDay(); //getDay() devuelve el dia de la semana.(0-6).
+  //Creamos un Array para los nombres de los días    
+    var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+    var diaLetras = diasSemana[fecha.getDay()];   //El día de la semana en letras. getDay() devuelve el dia de la semana.(0-6).
+  //Otro Array para los nombres de los meses    
+    var meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    var mesLetras = meses[fecha.getMonth()];  //El mes en letras
+    var diaMes = (fecha.getDate());   //getDate() devuelve el dia(1-31).
+    var anho = fecha.getFullYear();  //getFullYear() devuelve el año(4 dígitos).
+    var hora = fecha.getHours();    //getHours() devuelve la hora(0-23).
+    var min = fecha.getMinutes();   //getMinutes() devuelve los minutos(0-59).
+    if ((min >= 0) && (min < 10)) {    //Algoritmo para añadir un cero cuando el min tiene 1 cifra.
+      min = "0" + min;
+    }
+    //var devolver = "Hoy es " + diaLetras+ ", " + diaMes + " de " + mesLetras + " de " + anho + " y son las " + hora + ":" + min + " horas.";
+	var devolver =  diaLetras+ ", " + diaMes + " de " + mesLetras + " de " + anho;
+    return devolver;
+  }
+  var fecha = new Date();  //Declaramos el objeto fecha actual
+  document.write(textoFecha(fecha));  //Imprimir llamando a la función textoFecha()
+  textoFecha()
+</script>
+</head>
+<body>
+<ul id="menu">
+  <li> <a href="JavaScript:;" class="actual" onclick="setContenido(0);">Uno</a></li>
+  <li> <a href="JavaScript:;" onclick="setContenido(1);">Dos</a></li>
+  <li> <a href="JavaScript:;" onclick="setContenido(2);">Tres</a></li>
+</ul>
+<div id="contenidos">
+   <div id="0">
+   <div class="col-md-8 mb-margin-bottom-30"  id="p1"> <!--hidden="false"--> 
+                      <small class="pull-right" style="color:#aa1916;"><i class="fa fa-calendar"></i>
+					  <script> var fecha = new Date();  //Declaramos el objeto fecha actual
+						  document.write(textoFecha(fecha));  //Imprimir llamando a la función textoFecha()
+						  textoFecha()</script>
+					  </small>
+                        <div class="margin-bottom-40">
+                                    <div class="headline margin-bottom-30">
+                                    <h1>Contenido 1</h1></div>
+                         <h5><p align="justify">Oficina adscrita a la Vicerrectoría Académica, encargada de administrar el campus virtual de la UFPS, teniendo en cuenta los procesos de desarrollo de contenidos virtuales (de información, de aprendizaje y de evaluación), la formación y seguimiento de docentes, tutores y estudiantes. Cuenta con espacios físicos, personal capacitado y especializado, herramientas tecnológicas y recursos, necesarios para llevar a cabo el proceso de formación virtual.</p>
+                         </h5>
+            </div>
+					<div class="margin-bottom-40" align="center">
+   <img src="../../img/OFICINA 5-01.png" ></img></div>
+   </div>
+   </div>
+   <div id="1" style="display: none">
+   <div class="col-md-8 mb-margin-bottom-30"  id="p1"> <!--hidden="false"--> 
+                      <small class="pull-right" style="color:#aa1916;"><i class="fa fa-calendar"></i> lunes, 13 junio 2016</small>
+                        <div class="margin-bottom-40">
+                                    <div class="headline margin-bottom-30">
+                                    <h1>Contenido 2</h1></div>
+                         <h5><p align="justify">Oficina adscrita a la Vicerrectoría Académica, encargada de administrar el campus virtual de la UFPS, teniendo en cuenta los procesos de desarrollo de contenidos virtuales (de información, de aprendizaje y de evaluación), la formación y seguimiento de docentes, tutores y estudiantes. Cuenta con espacios físicos, personal capacitado y especializado, herramientas tecnológicas y recursos, necesarios para llevar a cabo el proceso de formación virtual.</p>
+                         </h5>
+            </div>
+					<div class="margin-bottom-40" align="center">
+   <img src="../../img/OFICINA 5-01.png" ></img></div>
+   </div>
+   </div>
+   <div id="2" style="display: none">
+   <div class="col-md-8 mb-margin-bottom-30"  id="p1"> <!--hidden="false"--> 
+                      <small class="pull-right" style="color:#aa1916;"><i class="fa fa-calendar"></i> lunes, 13 junio 2016</small>
+                        <div class="margin-bottom-40">
+                                    <div class="headline margin-bottom-30">
+                                    <h1>Quiénes somos</h1></div>
+                         <h5><p align="justify">Oficina adscrita a la Vicerrectoría Académica, encargada de administrar el campus virtual de la UFPS, teniendo en cuenta los procesos de desarrollo de contenidos virtuales (de información, de aprendizaje y de evaluación), la formación y seguimiento de docentes, tutores y estudiantes. Cuenta con espacios físicos, personal capacitado y especializado, herramientas tecnológicas y recursos, necesarios para llevar a cabo el proceso de formación virtual.</p>
+                         </h5>
+            </div>
+					<div class="margin-bottom-40" align="center">
+   <img src="../../img/OFICINA 5-01.png" ></img></div>
+   </div>
+   </div>   
+   </div>
+</body>
+</html>
